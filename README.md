@@ -37,7 +37,19 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 The repo also contains an R script called run_analysis.R that does the following, as per the instructions.
 
 1. Merges the training and the test sets to create one data set.
+ To do this we first downloaded and unzipped the data file.
+ Next we read in each file and assigned them to a simplified variable name.
+ Merging was done by column binding and row binding the relevant files
+
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
+  This columns were identified by using the grep command on the names of the merged dataset
+  Then we subsetted on those columns in the dataset
+
 3. Uses descriptive activity names to name the activities in the data set
+   Here we assign the simple activity names to the codes provided in the raw dataset.
+
 4 Appropriately labels the data set with descriptive variable names.
-5. A second independent tidy data ("tidy.txt") set has been created containing the averaged of each variable for each activity and each subject.
+  Here we used regular expression to replace acronyms with real words
+  
+5.A second independent tidy data ("tidy.txt") set has been created containing the averaged of each variable for each activity and each subject.
+  Using the plyr library and aggregate function

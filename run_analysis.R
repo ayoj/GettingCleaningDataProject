@@ -69,3 +69,8 @@ library(plyr)
 tidydata <- aggregate(. ~subject + activity, MergedMeanStd, mean)
 tidydata <- tidydata[order(tidydata$subject, tidydata$activity),]
 write.table(tidydata, file = "tidy.txt", row.names = FALSE)
+
+# The dataset conforms to the tidy data principles as per Hadley Wickham:
+# Each variable forms a column.
+# Each observation forms a row.
+# Each type of observational unit forms a table

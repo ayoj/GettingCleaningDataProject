@@ -13,12 +13,8 @@ test/y_test.txt: Test labels.
 
 Files for the train and test data. Their descriptions are equivalent. 
 
-1. train/subject_train.txt: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-2. train/Inertial Signals/total_acc_x_train.txt: The acceleration signal from the smartphone accelerometer X axis in standard gravity units g. Every row shows a 128 element vector. The same description applies for the total_acc_x_train.txt and total_acc_z_train.txt files for the Y and Z axis. 
-
-3. train/Inertial Signals/body_acc_x_train.txt: The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-
-4. train/Inertial Signals/body_gyro_x_train.txt: The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+1. train/subject_train.txt: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+2. test.subject_test.txt: See above
 
 Variables
 
@@ -43,13 +39,15 @@ README              README.txt
 subjectTest         test/subject_test.txt
 subjectTrain        train/subject_train.txt
 
-#add actual measurement names
-names(XTrain) <- features[,2]
-names(XTest) <- features[,2]
+Transformations
 
-Merges the training and the test sets to create one data set.
-Extracts only the measurements on the mean and standard deviation for each measurement.
-Uses descriptive activity names to name the activities in the data set 4 Appropriately labels the data set with descriptive variable names.
-A second independent tidy data ("tidy.txt") set has been created containing the averaged of each variable for each activity and each subject.
-Status API Training Shop Blog About Pricing
+Merge:
+MergedData:         A dataset consisting of training and test data along with subject IDs and set labels combined using cbind and rbind functions
+
+MergedMeanStd       A dataset extracted from MergedData by subsetting
+
+tidydata            A dataset of the mean measurements of MergedMeanStd by subject and activity obtained using the plyr package
+tidy.txt            File output by above computation
+
+
 

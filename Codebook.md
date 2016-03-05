@@ -44,10 +44,10 @@ Transformations
 Merge:
 MergedData:         A dataset consisting of training and test data along with subject IDs and set labels combined using cbind and rbind functions
 
-MergedMeanStd       A dataset extracted from MergedData by subsetting
+MergedMeanStd:       A dataset extracted from MergedData by subsetting
 
-tidydata            A dataset of the mean measurements of MergedMeanStd by subject and activity obtained using the plyr package
-tidy.txt            File output by above computation
+tidydata:            A dataset of the mean measurements of MergedMeanStd by subject and activity obtained using the plyr package
+tidy.txt:            File output by above computation
 
 
 
